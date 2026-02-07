@@ -1,4 +1,5 @@
 {
+  "updatedAt": "2026-02-07T18:21:00Z",
   "jobs": [
     {
       "id": "email-auto-reply",
@@ -6,8 +7,15 @@
       "category": "email",
       "schedule": {"kind": "every", "everyMs": 600000},
       "enabled": true,
-      "lastRun": "2026-02-07T17:50:00Z",
       "lastStatus": "success"
+    },
+    {
+      "id": "sync-claw-cron-dashboard",
+      "name": "Sync Claw-Cron Dashboard",
+      "category": "system",
+      "schedule": {"kind": "every", "everyMs": 1800000},
+      "enabled": true,
+      "lastStatus": "pending"
     },
     {
       "id": "daily-reflection-noon",
@@ -143,7 +151,9 @@
       "category": "reports",
       "schedule": {"kind": "cron", "expr": "0 14 * * 5"},
       "enabled": true,
-      "lastStatus": "success"
+      "lastRun": "2026-02-07T14:00:00Z",
+      "lastStatus": "success",
+      "lastDurationMs": 96264
     }
   ]
 }
