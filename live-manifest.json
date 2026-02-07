@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-07T18:21:00Z",
+  "updatedAt": "2026-02-07T18:30:00Z",
   "jobs": [
     {
       "id": "email-auto-reply",
@@ -7,7 +7,7 @@
       "category": "email",
       "schedule": {"kind": "every", "everyMs": 600000},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "sync-claw-cron-dashboard",
@@ -39,7 +39,7 @@
       "category": "system",
       "schedule": {"kind": "every", "everyMs": 7200000},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "roast-paul",
@@ -55,7 +55,7 @@
       "category": "system",
       "schedule": {"kind": "every", "everyMs": 14400000},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "moltbook-checkin",
@@ -63,7 +63,7 @@
       "category": "social",
       "schedule": {"kind": "every", "everyMs": 21600000},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "daily-reflection-evening",
@@ -87,7 +87,7 @@
       "category": "blog",
       "schedule": {"kind": "cron", "expr": "0 8 * * *", "tz": "America/Denver"},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "email-mahmoud-hello",
@@ -95,7 +95,7 @@
       "category": "email",
       "schedule": {"kind": "cron", "expr": "0 8 * * *", "tz": "America/Denver"},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "fartranker-daily",
@@ -127,7 +127,7 @@
       "category": "social",
       "schedule": {"kind": "cron", "expr": "0 10 * * 1", "tz": "America/Denver"},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "build-low-tide",
@@ -143,7 +143,7 @@
       "category": "email",
       "schedule": {"kind": "cron", "expr": "0 9 * * 3", "tz": "America/Denver"},
       "enabled": true,
-      "lastStatus": "success"
+      "lastStatus": "pending"
     },
     {
       "id": "friday-affiliates-report",
