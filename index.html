@@ -15,6 +15,8 @@
       </div>
       <div class="header-actions">
         <span class="last-updated" id="lastUpdated">--</span>
+        <button class="btn btn-secondary" id="connectApi" style="display:none">Connect API</button>
+        <button class="btn btn-secondary" id="loadManifest" style="display:none">Load File</button>
         <button class="btn btn-primary" id="refreshBtn">Refresh</button>
       </div>
     </header>
@@ -53,7 +55,7 @@
       </div>
     </div>
 
-    <!-- file input removed -->
+    <input type="file" id="fileInput" accept=".json" style="display:none">
     
     <!-- Auto-load handled by app.js -->
   </div>

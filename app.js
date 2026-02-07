@@ -8,6 +8,8 @@ const ClawCron = {
   config: {
     apiUrl: null,
     refreshInterval: 30000,
+    allowFileUpload: false,    // Set true to enable Load File button
+    allowApiConnect: false,    // Set true to enable Connect API button
   },
   
   init(config = {}) {
@@ -76,6 +78,50 @@ const ClawCron = {
     const refreshBtn = document.getElementById('refreshBtn');
     const modalClose = document.getElementById('modalClose');
     const modal = document.getElementById('jobModal');
+    
+    // Optional: File upload (disabled by default)
+    if (this.config.allowFileUpload) {
+      const fileInput = document.getElementById('fileInput');
+      const loadBtn = document.getElementById('loadManifest');
+      if (loadBtn && fileInput) {
+        loadBtn.style.display = '';
+        loadBtn.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', (e) => {
+          const file = e.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+              try {
+                const manifest = JSON.parse(ev.target.result);
+                this.loadManifest(manifest);
+              } catch (err) {
+                alert('Invalid JSON file');
+              }
+            };
+            reader.readAsText(file);
+          }
+        });
+      }
+    }
+    
+    // Optional: API connect (disabled by default)
+    if (this.config.allowApiConnect) {
+      const connectBtn = document.getElementById('connectApi');
+      if (connectBtn) {
+        connectBtn.style.display = '';
+        connectBtn.addEventListener('click', () => {
+          const savedUrl = localStorage.getItem('clawcron-api-url') || '';
+          const url = prompt('Enter API URL:', savedUrl);
+          if (url) {
+            localStorage.setItem('clawcron-api-url', url);
+            this.config.apiUrl = url;
+            this.fetchFromApi();
+            if (this._refreshInterval) clearInterval(this._refreshInterval);
+            this._refreshInterval = setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
+          }
+        });
+      }
+    }
     
     refreshBtn.addEventListener('click', () => {
       if (this.config.apiUrl) {
