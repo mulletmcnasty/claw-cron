@@ -55,6 +55,14 @@
     </div>
 
     <input type="file" id="fileInput" accept=".json" style="display: none">
+    
+    <!-- Demo: Auto-load live manifest if available -->
+    <script>
+      fetch('live-manifest.json')
+        .then(r => r.ok ? r.json() : null)
+        .then(data => { if (data) window.addEventListener('DOMContentLoaded', () => ClawCron.loadManifest(data)); })
+        .catch(() => {});
+    </script>
   </div>
 
   <!-- Job Detail Modal -->
