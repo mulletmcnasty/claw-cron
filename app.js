@@ -73,45 +73,9 @@ const ClawCron = {
   },
   
   bindEvents() {
-    // File input for manifest
-    const fileInput = document.getElementById('fileInput');
-    const loadBtn = document.getElementById('loadManifest');
-    const connectBtn = document.getElementById('connectApi');
     const refreshBtn = document.getElementById('refreshBtn');
     const modalClose = document.getElementById('modalClose');
     const modal = document.getElementById('jobModal');
-    
-    loadBtn.addEventListener('click', () => fileInput.click());
-    
-    connectBtn.addEventListener('click', () => {
-      const savedUrl = localStorage.getItem('clawcron-api-url') || '';
-      const url = prompt('Enter API URL (e.g., https://your-worker.workers.dev/state):', savedUrl);
-      if (url) {
-        localStorage.setItem('clawcron-api-url', url);
-        this.config.apiUrl = url;
-        this.fetchFromApi();
-        // Start auto-refresh
-        if (this._refreshInterval) clearInterval(this._refreshInterval);
-        this._refreshInterval = setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
-      }
-    });
-    
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (ev) => {
-          try {
-            const manifest = JSON.parse(ev.target.result);
-            this.loadManifest(manifest);
-            localStorage.setItem('clawcron-manifest', ev.target.result);
-          } catch (err) {
-            alert('Invalid JSON file');
-          }
-        };
-        reader.readAsText(file);
-      }
-    });
     
     refreshBtn.addEventListener('click', () => {
       if (this.config.apiUrl) {
