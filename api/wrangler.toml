@@ -1,0 +1,11 @@
+name = "claw-cron-api"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# Optional: Add KV namespace for persistent state
+# [[kv_namespaces]]
+# binding = "CRON_STATE"
+# id = "your-kv-namespace-id"
+
+[vars]
+AUTH_TOKEN = "claw-cron-secret"  # Change this!

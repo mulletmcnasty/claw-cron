@@ -20,13 +20,21 @@ const ClawCron = {
       setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
     }
     
-    // Check for saved manifest in localStorage
-    const saved = localStorage.getItem('clawcron-manifest');
-    if (saved) {
-      try {
-        this.loadManifest(JSON.parse(saved));
-      } catch (e) {
-        console.warn('Failed to load saved manifest:', e);
+    // Check for saved API URL first
+    const savedApiUrl = localStorage.getItem('clawcron-api-url');
+    if (savedApiUrl) {
+      this.config.apiUrl = savedApiUrl;
+      this.fetchFromApi();
+      this._refreshInterval = setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
+    } else {
+      // Fall back to saved manifest in localStorage
+      const saved = localStorage.getItem('clawcron-manifest');
+      if (saved) {
+        try {
+          this.loadManifest(JSON.parse(saved));
+        } catch (e) {
+          console.warn('Failed to load saved manifest:', e);
+        }
       }
     }
   },
@@ -35,11 +43,25 @@ const ClawCron = {
     // File input for manifest
     const fileInput = document.getElementById('fileInput');
     const loadBtn = document.getElementById('loadManifest');
+    const connectBtn = document.getElementById('connectApi');
     const refreshBtn = document.getElementById('refreshBtn');
     const modalClose = document.getElementById('modalClose');
     const modal = document.getElementById('jobModal');
     
     loadBtn.addEventListener('click', () => fileInput.click());
+    
+    connectBtn.addEventListener('click', () => {
+      const savedUrl = localStorage.getItem('clawcron-api-url') || '';
+      const url = prompt('Enter API URL (e.g., https://your-worker.workers.dev/state):', savedUrl);
+      if (url) {
+        localStorage.setItem('clawcron-api-url', url);
+        this.config.apiUrl = url;
+        this.fetchFromApi();
+        // Start auto-refresh
+        if (this._refreshInterval) clearInterval(this._refreshInterval);
+        this._refreshInterval = setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
+      }
+    });
     
     fileInput.addEventListener('change', (e) => {
       const file = e.target.files[0];
