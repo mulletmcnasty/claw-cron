@@ -1,0 +1,139 @@
+{
+  "jobs": [
+    {
+      "id": "email-auto-reply",
+      "name": "Email Auto-Reply",
+      "category": "email",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 600000
+      },
+      "enabled": true,
+      "lastRun": "2026-02-07T17:50:00Z",
+      "lastStatus": "success",
+      "lastDurationMs": 2340,
+      "runs": [
+        {"at": "2026-02-07T17:50:00Z", "status": "success", "durationMs": 2340},
+        {"at": "2026-02-07T17:40:00Z", "status": "success", "durationMs": 1890},
+        {"at": "2026-02-07T17:30:00Z", "status": "success", "durationMs": 2100},
+        {"at": "2026-02-07T17:20:00Z", "status": "failure", "durationMs": 5000},
+        {"at": "2026-02-07T17:10:00Z", "status": "success", "durationMs": 1950}
+      ]
+    },
+    {
+      "id": "twitter-engagement",
+      "name": "Twitter Engagement",
+      "category": "social",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/Denver"
+      },
+      "enabled": true,
+      "lastRun": "2026-02-06T18:00:00Z",
+      "lastStatus": "success",
+      "lastDurationMs": 45000,
+      "runs": [
+        {"at": "2026-02-06T18:00:00Z", "status": "success", "durationMs": 45000},
+        {"at": "2026-02-05T18:00:00Z", "status": "success", "durationMs": 38000}
+      ]
+    },
+    {
+      "id": "daily-reflection-noon",
+      "name": "Daily Reflection (Noon)",
+      "category": "reflection",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "America/Denver"
+      },
+      "enabled": true,
+      "lastRun": "2026-02-06T19:00:00Z",
+      "lastStatus": "success",
+      "runs": [
+        {"at": "2026-02-06T19:00:00Z", "status": "success", "durationMs": 12000}
+      ]
+    },
+    {
+      "id": "workspace-backup",
+      "name": "Workspace Backup",
+      "category": "system",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 14400000
+      },
+      "enabled": true,
+      "lastRun": "2026-02-07T14:00:00Z",
+      "lastStatus": "success",
+      "lastDurationMs": 3200,
+      "runs": [
+        {"at": "2026-02-07T14:00:00Z", "status": "success", "durationMs": 3200},
+        {"at": "2026-02-07T10:00:00Z", "status": "success", "durationMs": 2900},
+        {"at": "2026-02-07T06:00:00Z", "status": "success", "durationMs": 3100}
+      ]
+    },
+    {
+      "id": "cron-watchdog",
+      "name": "Cron Watchdog",
+      "category": "system",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000
+      },
+      "enabled": true,
+      "lastRun": "2026-02-07T16:00:00Z",
+      "lastStatus": "success",
+      "runs": [
+        {"at": "2026-02-07T16:00:00Z", "status": "success", "durationMs": 1500}
+      ]
+    },
+    {
+      "id": "newsletter-reply",
+      "name": "Newsletter Reply",
+      "category": "email",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 3",
+        "tz": "America/Denver"
+      },
+      "enabled": true,
+      "lastRun": "2026-02-05T16:00:00Z",
+      "lastStatus": "success",
+      "runs": [
+        {"at": "2026-02-05T16:00:00Z", "status": "success", "durationMs": 8500}
+      ]
+    },
+    {
+      "id": "old-unused-job",
+      "name": "Legacy Import",
+      "category": "deprecated",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 86400000
+      },
+      "enabled": false,
+      "lastRun": "2026-01-15T10:00:00Z",
+      "lastStatus": "success",
+      "runs": []
+    },
+    {
+      "id": "broken-api-check",
+      "name": "External API Check",
+      "category": "monitoring",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 300000
+      },
+      "enabled": true,
+      "lastRun": "2026-02-07T17:55:00Z",
+      "lastStatus": "failure",
+      "lastDurationMs": 30000,
+      "runs": [
+        {"at": "2026-02-07T17:55:00Z", "status": "failure", "durationMs": 30000},
+        {"at": "2026-02-07T17:50:00Z", "status": "failure", "durationMs": 30000},
+        {"at": "2026-02-07T17:45:00Z", "status": "failure", "durationMs": 30000},
+        {"at": "2026-02-07T17:40:00Z", "status": "success", "durationMs": 450}
+      ]
+    }
+  ]
+}

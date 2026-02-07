@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🦞 claw-cron</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="emoji">🦞</span>
+        <h1>claw-cron</h1>
+      </div>
+      <div class="header-actions">
+        <span class="last-updated" id="lastUpdated">--</span>
+        <button class="btn btn-secondary" id="loadManifest">Load Manifest</button>
+        <button class="btn btn-primary" id="refreshBtn">Refresh</button>
+      </div>
+    </header>
+
+    <div class="stats-bar">
+      <div class="stat">
+        <span class="stat-value" id="totalJobs">0</span>
+        <span class="stat-label">Total Jobs</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-success" id="activeJobs">0</span>
+        <span class="stat-label">Active</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-failure" id="failedJobs">0</span>
+        <span class="stat-label">Failed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value stat-disabled" id="disabledJobs">0</span>
+        <span class="stat-label">Disabled</span>
+      </div>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="active">Active</button>
+      <button class="filter-btn" data-filter="failed">Failed</button>
+      <button class="filter-btn" data-filter="disabled">Disabled</button>
+    </div>
+
+    <div class="jobs-grid" id="jobsGrid">
+      <div class="empty-state">
+        <span class="empty-icon">📋</span>
+        <p>No jobs loaded</p>
+        <p class="empty-hint">Load a manifest file or connect to an API</p>
+      </div>
+    </div>
+
+    <input type="file" id="fileInput" accept=".json" style="display: none">
+  </div>
+
+  <!-- Job Detail Modal -->
+  <div class="modal" id="jobModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalJobName">Job Name</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
