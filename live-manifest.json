@@ -1,5 +1,7 @@
 {
-  "updatedAt": "2026-02-07T18:30:00Z",
+  "updatedAt": "2026-02-07T20:54:00Z",
+  "syncStatus": "partial",
+  "syncNote": "Gateway timeout - using cached job list",
   "jobs": [
     {
       "id": "email-auto-reply",
@@ -21,7 +23,7 @@
         "everyMs": 1800000
       },
       "enabled": true,
-      "lastStatus": "pending"
+      "lastStatus": "running"
     },
     {
       "id": "daily-reflection-noon",
