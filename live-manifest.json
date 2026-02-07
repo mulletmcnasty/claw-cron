@@ -5,7 +5,10 @@
       "id": "email-auto-reply",
       "name": "Email Auto-Reply",
       "category": "email",
-      "schedule": {"kind": "every", "everyMs": 600000},
+      "schedule": {
+        "kind": "every",
+        "everyMs": 600000
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -13,7 +16,10 @@
       "id": "sync-claw-cron-dashboard",
       "name": "Sync Claw-Cron Dashboard",
       "category": "system",
-      "schedule": {"kind": "every", "everyMs": 1800000},
+      "schedule": {
+        "kind": "every",
+        "everyMs": 1800000
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -21,7 +27,11 @@
       "id": "daily-reflection-noon",
       "name": "Daily Reflection (Noon)",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 12 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 12 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -29,7 +39,11 @@
       "id": "daily-gallery-photo",
       "name": "Daily Gallery Photo",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 13 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 13 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -37,7 +51,10 @@
       "id": "cron-watchdog",
       "name": "Cron Watchdog",
       "category": "system",
-      "schedule": {"kind": "every", "everyMs": 7200000},
+      "schedule": {
+        "kind": "every",
+        "everyMs": 7200000
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -45,7 +62,11 @@
       "id": "roast-paul",
       "name": "Roast Paul",
       "category": "social",
-      "schedule": {"kind": "cron", "expr": "0 14 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -53,7 +74,10 @@
       "id": "workspace-backup",
       "name": "Workspace Backup",
       "category": "system",
-      "schedule": {"kind": "every", "everyMs": 14400000},
+      "schedule": {
+        "kind": "every",
+        "everyMs": 14400000
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -61,7 +85,10 @@
       "id": "moltbook-checkin",
       "name": "Moltbook Check-in",
       "category": "social",
-      "schedule": {"kind": "every", "everyMs": 21600000},
+      "schedule": {
+        "kind": "every",
+        "everyMs": 21600000
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -69,7 +96,11 @@
       "id": "daily-reflection-evening",
       "name": "Daily Reflection (Evening)",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 18 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 18 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -77,7 +108,11 @@
       "id": "daily-reflection-night",
       "name": "Daily Reflection (Night)",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 22 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 22 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -85,7 +120,11 @@
       "id": "daily-reflection-morning",
       "name": "Daily Reflection (Morning)",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 8 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -93,7 +132,11 @@
       "id": "email-mahmoud-hello",
       "name": "Email Mahmoud Hello",
       "category": "email",
-      "schedule": {"kind": "cron", "expr": "0 8 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -101,7 +144,11 @@
       "id": "fartranker-daily",
       "name": "FartRanker Daily",
       "category": "blog",
-      "schedule": {"kind": "cron", "expr": "0 10 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -109,7 +156,11 @@
       "id": "twitter-engagement",
       "name": "Twitter Engagement",
       "category": "social",
-      "schedule": {"kind": "cron", "expr": "0 11 * * *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 11 * * *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -117,7 +168,11 @@
       "id": "build-beach-bar-api",
       "name": "Build beach-bar-api",
       "category": "projects",
-      "schedule": {"kind": "cron", "expr": "0 14 8 2 *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 8 2 *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -125,7 +180,11 @@
       "id": "interesting-human-outreach",
       "name": "Interesting Human Outreach",
       "category": "social",
-      "schedule": {"kind": "cron", "expr": "0 10 * * 1", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * 1",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -133,7 +192,11 @@
       "id": "build-low-tide",
       "name": "Build low-tide",
       "category": "projects",
-      "schedule": {"kind": "cron", "expr": "0 14 9 2 *", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 14 9 2 *",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
     },
@@ -141,19 +204,13 @@
       "id": "newsletter-reply",
       "name": "Newsletter Reply",
       "category": "email",
-      "schedule": {"kind": "cron", "expr": "0 9 * * 3", "tz": "America/Denver"},
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * 3",
+        "tz": "America/Denver"
+      },
       "enabled": true,
       "lastStatus": "pending"
-    },
-    {
-      "id": "friday-affiliates-report",
-      "name": "Friday Affiliates Report",
-      "category": "reports",
-      "schedule": {"kind": "cron", "expr": "0 14 * * 5"},
-      "enabled": true,
-      "lastRun": "2026-02-07T14:00:00Z",
-      "lastStatus": "success",
-      "lastDurationMs": 96264
     }
   ]
 }
