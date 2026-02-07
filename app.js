@@ -27,14 +27,47 @@ const ClawCron = {
       this.fetchFromApi();
       this._refreshInterval = setInterval(() => this.fetchFromApi(), this.config.refreshInterval);
     } else {
-      // Fall back to saved manifest in localStorage
-      const saved = localStorage.getItem('clawcron-manifest');
-      if (saved) {
-        try {
-          this.loadManifest(JSON.parse(saved));
-        } catch (e) {
-          console.warn('Failed to load saved manifest:', e);
+      // Try to load live manifest (local file or GitHub raw)
+      this.loadLiveManifest();
+    }
+  },
+  
+  async loadLiveManifest() {
+    // Try local file first (works on GitHub Pages)
+    try {
+      const localResp = await fetch('live-manifest.json?t=' + Date.now());
+      if (localResp.ok) {
+        const data = await localResp.json();
+        if (data && data.jobs) {
+          this.loadManifest(data);
+          return;
         }
+      }
+    } catch (e) {
+      console.log('Local manifest not found, trying GitHub raw...');
+    }
+    
+    // Fallback to GitHub raw URL
+    try {
+      const ghResp = await fetch('https://raw.githubusercontent.com/mulletmcnasty/claw-cron/master/live-manifest.json?t=' + Date.now());
+      if (ghResp.ok) {
+        const data = await ghResp.json();
+        if (data && data.jobs) {
+          this.loadManifest(data);
+          return;
+        }
+      }
+    } catch (e) {
+      console.log('GitHub raw fetch failed:', e);
+    }
+    
+    // Last resort: check localStorage
+    const saved = localStorage.getItem('clawcron-manifest');
+    if (saved) {
+      try {
+        this.loadManifest(JSON.parse(saved));
+      } catch (e) {
+        console.warn('Failed to load saved manifest:', e);
       }
     }
   },
